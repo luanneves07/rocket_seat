@@ -24,3 +24,19 @@ pares = function(x, y) {
 temHabilidade = function(skills) {
     return skills.includes("Javascript")
 }
+
+experiencia = function(anos) {
+    experiencia = "";
+    if (1 >= anos) {
+        experiencia = "iniciante";
+    } else if (3 >= anos) {
+        experiencia = "Intermediário";
+    } else if (6 >= anos) {
+        experiencia = "Avançado";
+    } else if (7 <= anos ) {
+        experiencia = "Jedi Master";
+    } else {
+        experiencia = "Indefinido";
+    }
+    return experiencia;
+}
