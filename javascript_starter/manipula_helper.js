@@ -26,3 +26,20 @@ recuperaNovaCor = function() {
     }
     return color;
 }
+
+/**
+ * Cria uma ul para inserir na tela e para cada elemento dentro do array
+ * cria uma li contendo o nome (Inserido como TextNode dentro da li).
+ * Depois disto insere o item dentro da ul como Child e retorna a lista.
+ */
+criaListaDe = function(elements) {
+    var listView = document.createElement('ul')
+
+    elements.forEach(element => {
+        var item = document.createElement('li');
+        item.appendChild(document.createTextNode(element));
+        listView.appendChild(item);
+    });
+
+    return listView;
+}
