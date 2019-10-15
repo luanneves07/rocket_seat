@@ -7,7 +7,7 @@ var buttonElement = document.querySelector('div#app button');
 
 var repos = [];
 
-console.log("Exercicio 1");
+console.log("Exercicio 1 -> Realiza o output daqui 2 segundos...");
 checaIdade(12)
     .then(function(response) {
         console.log("Maior que 18");
@@ -16,34 +16,22 @@ checaIdade(12)
         console.log("Menor que 18");
     });
 
-console.log("Exercicio 2");
-
-/**
- * Renderiza lista de repos na tela
- */
-function renderRepos() {
-    listElement.innerHTML = "";
-    repos.map(render);
-}
-
+console.log("Exercicio 2 e 3 -> Busque um usuario do gitHub no input");
 function requestRepos() {
     if(inputElement.value.trim()) {
-        repos = [];
+        refresh();
         var userName = inputElement.value;
         axios.get(String.format('https://api.github.com/users/{0}/repos', userName))
         .then(function(response) {
             inputElement.value = "";
             response.data.map(repo => repos.push(repo.name));
-            renderRepos();
+            renderizaLista();
         })
         .catch(function(error) {
             console.warn(error);
             repos.push("Usuario nao encontrado");
-            renderRepos();
+            renderizaLista();
         });
     }
 }
-
 buttonElement.onclick = requestRepos;
-
-console.log("Exercicio 3");
