@@ -1,36 +1,27 @@
-class List {
-    constructor() {
-        this.items = [];
+class Usuario {
+    constructor(email, senha) {
+        this.email = email;
+        this.senha = senha;
+        this.admin = false;
     }
 
-    add(data) {
-        this.items.push(data);
-        console.log(this.items);
-    }
-}
-
-class TodoList extends List {
-    constructor() {
-        super();
-        this.usuario = 'Luan';
+    setAdmin(status) {
+        this.admin = status;
     }
 
-    mostraUsuario() {
-        console.log(this.usuario);
+    isAdmin(){
+        return this.admin;
     }
 }
 
-class Matematica {
-    static soma(a, b) {
-        return a + b;
+class Admin extends Usuario {
+    constructor(email, senha) {
+        super(email, senha);
+        this.setAdmin(true);
     }
 }
 
-const MinhaLista = new TodoList();
-
-document.getElementById('novotodo').onclick = function() {
-    MinhaLista.add('Novo todo');
-    MinhaLista.mostraUsuario();
-}
-
-console.log(Matematica.soma(50, 200));
+const User1 = new Usuario('email@teste.com', 'senha123');
+const Adm1 = new Admin('email@teste.com', 'senha123');
+console.log(User1.isAdmin()) // false
+console.log(Adm1.isAdmin()) // true

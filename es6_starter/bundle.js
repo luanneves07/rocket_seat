@@ -18,73 +18,54 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var List =
+var Usuario =
 /*#__PURE__*/
 function () {
-  function List() {
-    _classCallCheck(this, List);
+  function Usuario(email, senha) {
+    _classCallCheck(this, Usuario);
 
-    this.items = [];
+    this.email = email;
+    this.senha = senha;
+    this.admin = false;
   }
 
-  _createClass(List, [{
-    key: "add",
-    value: function add(data) {
-      this.items.push(data);
-      console.log(this.items);
+  _createClass(Usuario, [{
+    key: "setAdmin",
+    value: function setAdmin(status) {
+      this.admin = status;
+    }
+  }, {
+    key: "isAdmin",
+    value: function isAdmin() {
+      return this.admin;
     }
   }]);
 
-  return List;
+  return Usuario;
 }();
 
-var TodoList =
+var Admin =
 /*#__PURE__*/
-function (_List) {
-  _inherits(TodoList, _List);
+function (_Usuario) {
+  _inherits(Admin, _Usuario);
 
-  function TodoList() {
+  function Admin(email, senha) {
     var _this;
 
-    _classCallCheck(this, TodoList);
+    _classCallCheck(this, Admin);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(TodoList).call(this));
-    _this.usuario = 'Luan';
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Admin).call(this, email, senha));
+
+    _this.setAdmin(true);
+
     return _this;
   }
 
-  _createClass(TodoList, [{
-    key: "mostraUsuario",
-    value: function mostraUsuario() {
-      console.log(this.usuario);
-    }
-  }]);
+  return Admin;
+}(Usuario);
 
-  return TodoList;
-}(List);
+var User1 = new Usuario('email@teste.com', 'senha123');
+var Adm1 = new Admin('email@teste.com', 'senha123');
+console.log(User1.isAdmin()); // false
 
-var Matematica =
-/*#__PURE__*/
-function () {
-  function Matematica() {
-    _classCallCheck(this, Matematica);
-  }
-
-  _createClass(Matematica, null, [{
-    key: "soma",
-    value: function soma(a, b) {
-      return a + b;
-    }
-  }]);
-
-  return Matematica;
-}();
-
-var MinhaLista = new TodoList();
-
-document.getElementById('novotodo').onclick = function () {
-  MinhaLista.add('Novo todo');
-  MinhaLista.mostraUsuario();
-};
-
-console.log(Matematica.soma(50, 200));
+console.log(Adm1.isAdmin()); // true
