@@ -64,8 +64,49 @@ function (_Usuario) {
   return Admin;
 }(Usuario);
 
+console.log("Exercício 1");
 var User1 = new Usuario('email@teste.com', 'senha123');
 var Adm1 = new Admin('email@teste.com', 'senha123');
-console.log(User1.isAdmin()); // false
+console.log(User1.isAdmin());
+console.log(Adm1.isAdmin());
+console.log("Exercício 2");
+var usuarios = [{
+  nome: 'Diego',
+  idade: 23,
+  empresa: 'Rocketseat'
+}, {
+  nome: 'Gabriel',
+  idade: 15,
+  empresa: 'Rocketseat'
+}, {
+  nome: 'Lucas',
+  idade: 30,
+  empresa: 'Facebook'
+}];
+var idades = usuarios.map(function (usuario) {
+  return usuario.idade;
+});
+var filter = usuarios.filter(function (usuario) {
+  return 'Rocketseat' === usuario.empresa && 18 < usuario.idade;
+});
+var find = usuarios.find(function (usuario) {
+  return 'Google' === usuario.empresa;
+});
+var result = usuarios.reduce(function (filtro, usuario) {
+  var idadeAlterada = 2 * usuario.idade;
+  var user = {
+    nome: usuario.nome,
+    idade: idadeAlterada,
+    empresa: usuario.empresa
+  };
 
-console.log(Adm1.isAdmin()); // true
+  if (50 >= idadeAlterada) {
+    filtro.push(user);
+  }
+
+  return filtro;
+}, []);
+console.log(idades);
+console.log(filter);
+console.log(find);
+console.log(result);
