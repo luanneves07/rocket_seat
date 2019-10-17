@@ -261,3 +261,11 @@ var usuario3 = _objectSpread({}, usuario_spread, {
 console.log(usuario_spread);
 console.log(usuario2);
 console.log(usuario3);
+/****************
+ * Exercício 6  *
+ ***************/
+
+console.log("Exercício 6");
+var usuario_template = 'Luan';
+var idade_template = 23;
+console.log("O usu\xE1rio ".concat(usuario_template, " possui ").concat(idade_template, " anos"));

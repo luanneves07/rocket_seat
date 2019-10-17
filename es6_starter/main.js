@@ -142,3 +142,11 @@ const usuario3 = { ...usuario_spread, endereco: { cidade: "Lontras" } };
 console.log(usuario_spread);
 console.log(usuario2);
 console.log(usuario3);
+
+/****************
+ * Exercício 6  *
+ ***************/
+console.log("Exercício 6");
+const usuario_template = 'Luan';
+const idade_template = 23;
+console.log(`O usuário ${usuario_template} possui ${idade_template} anos`);
