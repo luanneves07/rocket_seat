@@ -266,6 +266,19 @@ console.log(usuario3);
  ***************/
 
 console.log("Exercício 6");
-var usuario_template = 'Luan';
-var idade_template = 23;
-console.log("O usu\xE1rio ".concat(usuario_template, " possui ").concat(idade_template, " anos"));
+var templateUser = 'Luan';
+var templateAge = 23;
+console.log("O usu\xE1rio ".concat(templateUser, " possui ").concat(templateAge, " anos"));
+/****************
+ * Exercício 7  *
+ ***************/
+
+console.log("Exercício 7");
+var tempNome = 'Luan';
+var tempIdade = 23;
+var temUser = {
+  tempNome: tempNome,
+  tempIdade: tempIdade,
+  cidade: 'Rio do Sul'
+};
+console.log(temUser);

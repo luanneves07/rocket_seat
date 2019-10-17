@@ -147,6 +147,19 @@ console.log(usuario3);
  * Exercício 6  *
  ***************/
 console.log("Exercício 6");
-const usuario_template = 'Luan';
-const idade_template = 23;
-console.log(`O usuário ${usuario_template} possui ${idade_template} anos`);
+const templateUser = 'Luan';
+const templateAge = 23;
+console.log(`O usuário ${templateUser} possui ${templateAge} anos`);
+
+/****************
+ * Exercício 7  *
+ ***************/
+console.log("Exercício 7");
+const tempNome = 'Luan';
+const tempIdade = 23;
+const temUser = {
+    tempNome,
+    tempIdade,
+    cidade: 'Rio do Sul',
+};
+console.log(temUser);
