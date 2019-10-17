@@ -103,12 +103,42 @@ const empresa = {
     }
 };
 
-const { name, endereco: {cidade, estado} } = empresa;
+const { name, endereco: { cidade, estado } } = empresa;
 console.log(nome); // Rocketseat
 console.log(cidade); // Rio do Sul
 console.log(estado); // SC
 
 function mostraInfo({ nome, idade }) {
     return `${nome} tem ${idade} anos.`;
-   }
+}
 console.log(mostraInfo({ nome: 'Luan', idade: 23 }));
+
+/****************
+ * Exercício 5  *
+ ***************/
+console.log("Exercício 5");
+const arr = [1, 2, 3, 4, 5, 6]
+const [x, ...y] = arr;
+console.log(x); // 1
+console.log(y); // [2, 3, 4, 5, 6]
+
+function soma(...values) {
+    return values.reduce((total, next) => total + next);
+}
+console.log(soma(1, 2, 3, 4, 5, 6)); // 21
+console.log(soma(1, 2));
+
+const usuario_spread = {
+    nome: 'Diego',
+    idade: 23,
+    endereco: {
+        cidade: 'Rio do Sul',
+        uf: 'SC',
+        pais: 'Brasil',
+    }
+};
+const usuario2 = { ...usuario_spread, nome: "Gabriel" };
+const usuario3 = { ...usuario_spread, endereco: { cidade: "Lontras" } };
+console.log(usuario_spread);
+console.log(usuario2);
+console.log(usuario3);

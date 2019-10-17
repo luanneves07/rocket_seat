@@ -1,5 +1,11 @@
 "use strict";
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
@@ -207,3 +213,51 @@ console.log(mostraInfo({
   nome: 'Luan',
   idade: 23
 }));
+/****************
+ * Exercício 5  *
+ ***************/
+
+console.log("Exercício 5");
+var arr = [1, 2, 3, 4, 5, 6];
+var x = arr[0],
+    y = arr.slice(1);
+console.log(x); // 1
+
+console.log(y); // [2, 3, 4, 5, 6]
+
+function soma() {
+  for (var _len = arguments.length, values = new Array(_len), _key = 0; _key < _len; _key++) {
+    values[_key] = arguments[_key];
+  }
+
+  return values.reduce(function (total, next) {
+    return total + next;
+  });
+}
+
+console.log(soma(1, 2, 3, 4, 5, 6)); // 21
+
+console.log(soma(1, 2));
+var usuario_spread = {
+  nome: 'Diego',
+  idade: 23,
+  endereco: {
+    cidade: 'Rio do Sul',
+    uf: 'SC',
+    pais: 'Brasil'
+  }
+};
+
+var usuario2 = _objectSpread({}, usuario_spread, {
+  nome: "Gabriel"
+});
+
+var usuario3 = _objectSpread({}, usuario_spread, {
+  endereco: {
+    cidade: "Lontras"
+  }
+});
+
+console.log(usuario_spread);
+console.log(usuario2);
+console.log(usuario3);
