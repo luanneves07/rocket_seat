@@ -90,6 +90,10 @@ var usuarios = [{
   nome: 'Lucas',
   idade: 30,
   empresa: 'Facebook'
+}, {
+  nome: 'Luan',
+  idade: 30,
+  empresa: 'Atech'
 }];
 var idades = usuarios.map(function (usuario) {
   return usuario.idade;
@@ -123,18 +127,20 @@ console.log(result);
  ***************/
 
 console.log("Exercício 3");
-var arr = [1, 2, 3, 4, 5]; // arr.map(function(item) {
+var arrayDeSoma = [1, 2, 3, 4, 5];
+var usuario = {
+  nome: 'Luan',
+  idade: 23
+};
+var nome = "Luan";
+var idade = 23; // arrayDeSoma.map(function(item) {
 //     return item + 10;
 // });
 
-var r = arr.map(function (item) {
+var resultado = arrayDeSoma.map(function (item) {
   return 10 + item;
 });
-console.log(r);
-var usuario = {
-  nome: 'Diego',
-  idade: 23
-}; // function mostraIdade(usuario) {
+console.log(resultado); // function mostraIdade(usuario) {
 //     return usuario.idade;
 // }
 
@@ -142,9 +148,7 @@ var mostraIdade = function mostraIdade(usuario) {
   return usuario.idade;
 };
 
-console.log(mostraIdade(usuario));
-var nome = "Diego";
-var idade = 23; // function mostraUsuario(nome = 'Diego', idade = 18) {
+console.log(mostraIdade(usuario)); // function mostraUsuario(nome = 'Diego', idade = 18) {
 //     return { nome, idade };
 // }
 
@@ -171,3 +175,35 @@ var promise = function promise() {
 };
 
 console.log(promise());
+/****************
+ * Exercício 4  *
+ ***************/
+
+console.log("Exercício 4");
+var empresa = {
+  name: 'Rocketseat',
+  endereco: {
+    cidade: 'Rio do Sul',
+    estado: 'SC'
+  }
+};
+var name = empresa.name,
+    _empresa$endereco = empresa.endereco,
+    cidade = _empresa$endereco.cidade,
+    estado = _empresa$endereco.estado;
+console.log(nome); // Rocketseat
+
+console.log(cidade); // Rio do Sul
+
+console.log(estado); // SC
+
+function mostraInfo(_ref) {
+  var nome = _ref.nome,
+      idade = _ref.idade;
+  return "".concat(nome, " tem ").concat(idade, " anos.");
+}
+
+console.log(mostraInfo({
+  nome: 'Luan',
+  idade: 23
+}));

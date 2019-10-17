@@ -38,6 +38,7 @@ const usuarios = [
     { nome: 'Diego', idade: 23, empresa: 'Rocketseat' },
     { nome: 'Gabriel', idade: 15, empresa: 'Rocketseat' },
     { nome: 'Lucas', idade: 30, empresa: 'Facebook' },
+    { nome: 'Luan', idade: 30, empresa: 'Atech' }
 ];
 const idades = usuarios.map(usuario => usuario.idade);
 const filter = usuarios.filter(usuario => 'Rocketseat' === usuario.empresa && 18 < usuario.idade);
@@ -59,22 +60,22 @@ console.log(result);
  * Exercício 3  *
  ***************/
 console.log("Exercício 3");
-const arr = [1, 2, 3, 4, 5];
-// arr.map(function(item) {
+const arrayDeSoma = [1, 2, 3, 4, 5];
+const usuario = { nome: 'Luan', idade: 23 };
+const nome = "Luan";
+const idade = 23;
+// arrayDeSoma.map(function(item) {
 //     return item + 10;
 // });
-const r = arr.map(item => 10 + item);
-console.log(r);
+const resultado = arrayDeSoma.map(item => 10 + item);
+console.log(resultado);
 
-const usuario = { nome: 'Diego', idade: 23 };
 // function mostraIdade(usuario) {
 //     return usuario.idade;
 // }
 const mostraIdade = usuario => usuario.idade;
 console.log(mostraIdade(usuario));
 
-const nome = "Diego";
-const idade = 23;
 // function mostraUsuario(nome = 'Diego', idade = 18) {
 //     return { nome, idade };
 // }
@@ -89,3 +90,25 @@ console.log(mostraUsuario(nome));
 // }
 const promise = () => new Promise(resolve => resolve());
 console.log(promise());
+
+/****************
+ * Exercício 4  *
+ ***************/
+console.log("Exercício 4");
+const empresa = {
+    name: 'Rocketseat',
+    endereco: {
+        cidade: 'Rio do Sul',
+        estado: 'SC',
+    }
+};
+
+const { name, endereco: {cidade, estado} } = empresa;
+console.log(nome); // Rocketseat
+console.log(cidade); // Rio do Sul
+console.log(estado); // SC
+
+function mostraInfo({ nome, idade }) {
+    return `${nome} tem ${idade} anos.`;
+   }
+console.log(mostraInfo({ nome: 'Luan', idade: 23 }));
