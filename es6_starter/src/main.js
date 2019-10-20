@@ -10,7 +10,6 @@ ClasseUsuario.info();
 /**
  * 1.2
  */
-const div = document.querySelector('div#app');
 const outputBox = document.querySelector("div#app span.output");
 const outputText = document.createTextNode(`Idade: ${idade}`);
 outputBox.appendChild(outputText);
